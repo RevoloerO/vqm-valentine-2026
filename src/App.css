@@ -1,0 +1,363 @@
+/* App Container */
+.app {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--color-background);
+}
+
+/* Hero Section */
+.hero-section {
+  min-height: 100vh;
+  min-height: 100dvh; /* Dynamic viewport height for mobile */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 16px 140px;
+  background: var(--gradient-hero);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.25) 0%, transparent 50%),
+              radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.2) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 600px;
+  padding: 0 10px;
+}
+
+.hero-section h1 {
+  font-size: clamp(2.2rem, 10vw, var(--text-5xl));
+  font-family: var(--font-cursive);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 16px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeInDown 1s ease-out;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+.hero-section .subtitle {
+  font-size: clamp(1.5rem, 6vw, var(--text-3xl));
+  font-family: var(--font-cursive);
+  font-weight: 600;
+  color: var(--color-accent);
+  margin-bottom: 8px;
+  animation: fadeInUp 1s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+.hero-section .subtitle-nurse {
+  font-size: clamp(1rem, 4vw, var(--text-lg));
+  font-family: var(--font-body);
+  font-weight: 500;
+  color: var(--color-text-light);
+  margin-bottom: 10px;
+  animation: fadeInUp 1s ease-out 0.5s forwards;
+  opacity: 0;
+}
+
+/* Scroll Button - Inviting Animation */
+.scroll-indicator {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  z-index: 10;
+  padding: 14px 28px;
+  background: var(--color-card-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--color-border);
+  transition: all 0.3s ease;
+  animation: inviteClick 2.5s ease-in-out infinite;
+}
+
+.scroll-indicator:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateX(-50%) scale(1.08);
+  animation: none;
+}
+
+.scroll-indicator:active {
+  transform: translateX(-50%) scale(0.95);
+}
+
+.scroll-indicator .scroll-text {
+  font-family: var(--font-body);
+  font-weight: 600;
+  color: var(--color-text);
+  font-size: var(--text-sm);
+  transition: color var(--transition-theme);
+}
+
+.scroll-indicator .scroll-arrow {
+  width: 14px;
+  height: 14px;
+  border-right: 2.5px solid var(--color-accent);
+  border-bottom: 2.5px solid var(--color-accent);
+  transform: rotate(45deg);
+  animation: arrowBounce 1s ease-in-out infinite;
+  transition: border-color var(--transition-theme);
+}
+
+/* Inviting click animation - gentle glow pulse */
+@keyframes inviteClick {
+  0%, 100% {
+    box-shadow: var(--shadow-md);
+    transform: translateX(-50%) scale(1);
+  }
+  25% {
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15), 0 0 20px var(--color-primary);
+    transform: translateX(-50%) scale(1.03);
+  }
+  50% {
+    box-shadow: var(--shadow-md);
+    transform: translateX(-50%) scale(1);
+  }
+  75% {
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15), 0 0 15px var(--color-accent);
+    transform: translateX(-50%) scale(1.02);
+  }
+}
+
+@keyframes arrowBounce {
+  0%, 100% {
+    transform: rotate(45deg) translateY(0);
+  }
+  50% {
+    transform: rotate(45deg) translateY(5px);
+  }
+}
+
+/* Section Wrappers */
+.gallery-section,
+.quote-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-section .photo-gallery,
+.quote-section .bible-quote-section {
+  position: relative;
+  z-index: 2;
+}
+
+/* App Footer */
+.app-footer {
+  position: relative;
+  padding: 50px 16px;
+  text-align: center;
+  background: linear-gradient(180deg, var(--color-background) 0%, var(--color-primary) 100%);
+  overflow: hidden;
+}
+
+.footer-content {
+  position: relative;
+  z-index: 2;
+}
+
+.app-footer p {
+  font-size: var(--text-lg);
+  font-family: var(--font-cursive);
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.footer-names {
+  font-size: var(--text-xl) !important;
+  font-family: var(--font-cursive) !important;
+  color: var(--color-accent) !important;
+  margin-top: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 1px;
+}
+
+.footer-date {
+  font-size: var(--text-sm) !important;
+  font-family: var(--font-body) !important;
+  color: var(--color-text-light) !important;
+  margin-top: 8px !important;
+  font-weight: 500 !important;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   MOBILE RESPONSIVE - Phone Screen Optimized
+   ============================================ */
+
+/* Small phones (320px - 375px) */
+@media (max-width: 375px) {
+  .hero-section {
+    padding: 50px 12px 130px;
+    min-height: 100dvh;
+  }
+
+  .hero-section h1 {
+    font-size: 2rem;
+    margin-bottom: 12px;
+  }
+
+  .hero-section .subtitle {
+    font-size: 1.4rem;
+  }
+
+  .hero-section .subtitle-nurse {
+    font-size: 0.95rem;
+  }
+
+  .scroll-indicator {
+    bottom: 20px;
+    padding: 12px 22px;
+  }
+
+  .scroll-indicator .scroll-text {
+    font-size: 0.9rem;
+  }
+
+  .scroll-indicator .scroll-arrow {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+/* Standard phones (376px - 480px) */
+@media (min-width: 376px) and (max-width: 480px) {
+  .hero-section {
+    padding: 50px 14px 130px;
+    min-height: 100dvh;
+  }
+
+  .hero-section h1 {
+    font-size: 2.3rem;
+  }
+
+  .hero-section .subtitle {
+    font-size: 1.5rem;
+  }
+
+  .scroll-indicator {
+    bottom: 22px;
+    padding: 12px 24px;
+  }
+}
+
+/* Large phones / Small tablets (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .hero-section {
+    padding: 60px 20px 120px;
+  }
+
+  .hero-section h1 {
+    font-size: 2.8rem;
+  }
+
+  .scroll-indicator {
+    bottom: 25px;
+  }
+}
+
+/* Tablets and up (769px+) */
+@media (min-width: 769px) {
+  .hero-section {
+    padding: 60px 20px 120px;
+  }
+
+  .scroll-indicator {
+    bottom: 30px;
+    padding: 14px 30px;
+  }
+}
+
+/* Landscape orientation on phones */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero-section {
+    min-height: auto;
+    padding: 30px 20px 80px;
+  }
+
+  .hero-section h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+
+  .hero-section .subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
+
+  .hero-section .subtitle-nurse {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+  }
+
+  .scroll-indicator {
+    bottom: 15px;
+    padding: 8px 18px;
+  }
+
+  .scroll-indicator .scroll-text {
+    font-size: 0.85rem;
+  }
+}
+
+/* Ensure background effects are dim */
+.floating-hearts-container,
+.falling-petals-container {
+  opacity: 0.5;
+}
+
+/* Safe area for notched phones (iPhone X+) */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .scroll-indicator {
+    bottom: calc(25px + env(safe-area-inset-bottom));
+  }
+
+  .app-footer {
+    padding-bottom: calc(50px + env(safe-area-inset-bottom));
+  }
+}

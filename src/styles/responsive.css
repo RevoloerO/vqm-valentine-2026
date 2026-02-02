@@ -1,0 +1,349 @@
+/* ============================================
+   MOBILE FIRST RESPONSIVE DESIGN
+   Optimized for Phone Screens
+   ============================================ */
+
+/* Base - Mobile First */
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Extra Small Devices (small phones, 320px - 375px) */
+@media (max-width: 375px) {
+  html {
+    font-size: 14px;
+  }
+
+  .gallery-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .gallery-header p {
+    font-size: 0.9rem;
+  }
+
+  .gallery-grid {
+    gap: 15px;
+    padding: 0 10px;
+  }
+
+  .verse {
+    padding: 20px 16px;
+  }
+
+  .verse-text {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .big-question {
+    font-size: 1.6rem;
+  }
+
+  .yes-button-final,
+  .no-button-final {
+    padding: 12px 28px;
+    font-size: 1rem;
+  }
+
+  .theme-switcher {
+    top: 12px;
+    right: 12px;
+  }
+
+  .theme-toggle-btn {
+    padding: 8px 12px;
+  }
+
+  .theme-icon {
+    font-size: 1.1rem;
+  }
+}
+
+/* Small Devices (standard phones, 376px - 480px) */
+@media (min-width: 376px) and (max-width: 480px) {
+  html {
+    font-size: 15px;
+  }
+
+  .gallery-header h2 {
+    font-size: 2rem;
+  }
+
+  .gallery-grid {
+    gap: 18px;
+    padding: 0 12px;
+  }
+
+  .verse {
+    padding: 25px 20px;
+  }
+
+  .verse-text {
+    font-size: 1.05rem;
+  }
+
+  .big-question {
+    font-size: 1.8rem;
+  }
+}
+
+/* Medium Devices (large phones / small tablets, 481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+
+  .gallery-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .verse {
+    padding: 30px 25px;
+  }
+}
+
+/* Large Devices (tablets, 769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  html {
+    font-size: 16px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+/* Extra Large Devices (desktops, 1025px+) */
+@media (min-width: 1025px) {
+  html {
+    font-size: 17px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+}
+
+/* Very Large Screens (1400px+) */
+@media (min-width: 1400px) {
+  html {
+    font-size: 18px;
+  }
+
+  .gallery-grid {
+    max-width: 1400px;
+  }
+
+  .quote-container {
+    max-width: 900px;
+  }
+}
+
+/* ============================================
+   TOUCH DEVICE OPTIMIZATIONS
+   ============================================ */
+@media (hover: none) and (pointer: coarse) {
+  /* Disable hover effects on touch */
+  .photo-card:hover .photo-card-front img {
+    transform: none;
+  }
+
+  .photo-card:hover .photo-card-front {
+    box-shadow: var(--shadow-md);
+  }
+
+  .yes-button-final:hover,
+  .no-button-final:hover {
+    transform: none;
+  }
+
+  .theme-toggle-btn:hover {
+    transform: none;
+  }
+
+  /* Better touch targets */
+  .scroll-indicator {
+    min-height: 48px;
+  }
+
+  .theme-toggle-btn {
+    min-height: 44px;
+  }
+
+  .yes-button-final,
+  .no-button-final {
+    min-height: 48px;
+  }
+
+  /* Active states for touch */
+  .scroll-indicator:active {
+    transform: translateX(-50%) scale(0.95);
+    animation: none;
+  }
+
+  .yes-button-final:active {
+    transform: scale(0.95);
+  }
+
+  .no-button-final:active {
+    transform: scale(0.9);
+  }
+
+  .theme-toggle-btn:active {
+    transform: scale(0.95);
+  }
+
+  .photo-card:active .photo-card-front {
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+/* ============================================
+   LANDSCAPE ORIENTATION
+   ============================================ */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero-section {
+    min-height: auto;
+    padding: 25px 20px 70px;
+  }
+
+  .photo-gallery {
+    padding: 30px 15px;
+  }
+
+  .gallery-header {
+    margin-bottom: 25px;
+  }
+
+  .bible-quote-section {
+    min-height: auto;
+    padding: 30px 15px;
+  }
+
+  .app-footer {
+    padding: 25px 15px;
+  }
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .photo-card-inner {
+    transition: none;
+  }
+
+  .scroll-indicator {
+    animation: none;
+  }
+
+  .auto-progress {
+    transition: none;
+  }
+
+  :root.theme-transitioning::after {
+    animation: none;
+  }
+}
+
+/* ============================================
+   HIGH CONTRAST MODE
+   ============================================ */
+@media (prefers-contrast: high) {
+  :root {
+    --color-border: #000000;
+    --color-text: #000000;
+  }
+
+  .scroll-indicator,
+  .days-together,
+  .verse {
+    border-width: 3px;
+  }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+@media print {
+  .particle-container,
+  .floating-hearts-container,
+  .falling-petals-container,
+  .button-group,
+  .scroll-indicator,
+  .theme-switcher,
+  .live-counter {
+    display: none !important;
+  }
+
+  .photo-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  body {
+    background: white !important;
+  }
+
+  .hero-section,
+  .photo-gallery,
+  .bible-quote-section {
+    min-height: auto;
+    padding: 20px;
+  }
+}
+
+/* ============================================
+   SAFE AREA (Notched phones - iPhone X+)
+   ============================================ */
+@supports (padding: env(safe-area-inset-bottom)) {
+  .hero-section {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+
+  .photo-gallery {
+    padding-left: calc(15px + env(safe-area-inset-left));
+    padding-right: calc(15px + env(safe-area-inset-right));
+  }
+
+  .bible-quote-section {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+
+  .theme-switcher {
+    right: calc(15px + env(safe-area-inset-right));
+  }
+}
+
+/* ============================================
+   DARK MODE (Optional - uncomment to enable)
+   ============================================ */
+/*
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #1a1a2e;
+    --color-card-bg: rgba(30, 30, 50, 0.95);
+    --color-text: #eaeaea;
+    --color-text-light: #b0b0b0;
+  }
+}
+*/

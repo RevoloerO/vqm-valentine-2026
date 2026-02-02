@@ -1,0 +1,327 @@
+.bible-quote-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-quote);
+  padding: 60px 16px;
+}
+
+.quote-container {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.verse {
+  margin: 0 0 40px;
+  padding: 35px 25px;
+  background: var(--color-card-bg);
+  border-left: 5px solid var(--color-accent);
+  border-radius: var(--radius-md);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+.verse-text {
+  font-size: clamp(1rem, 4vw, var(--text-xl));
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--color-text);
+  line-height: 1.9;
+  margin: 0 0 20px;
+}
+
+.verse-reference {
+  font-size: var(--text-sm);
+  color: var(--color-accent);
+  font-family: var(--font-body);
+  font-weight: 600;
+}
+
+.dedication {
+  margin: 40px 0;
+}
+
+.dedication p {
+  font-size: clamp(1.5rem, 6vw, var(--text-3xl));
+  font-family: var(--font-cursive);
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 10px 0;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.her-name {
+  font-weight: 700;
+  color: var(--color-accent);
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.achievement {
+  font-size: var(--text-base) !important;
+  font-family: var(--font-ui) !important;
+  color: var(--color-primary);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600 !important;
+}
+
+.question-section {
+  margin-top: 50px;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+.big-question {
+  font-size: clamp(1.6rem, 7vw, var(--text-4xl));
+  font-family: var(--font-cursive);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 35px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.button-group {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.yes-button-final,
+.no-button-final {
+  padding: 16px 45px;
+  font-size: var(--text-base);
+  font-family: var(--font-cursive);
+  font-weight: 600;
+  border: 3px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.yes-button-final {
+  background: var(--color-accent);
+  color: white;
+}
+
+.yes-button-final:hover {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-lg);
+}
+
+.no-button-final {
+  background: var(--color-primary);
+  color: white;
+}
+
+.no-button-final:hover {
+  transform: scale(0.95);
+  opacity: 0.85;
+}
+
+.response {
+  margin-top: 40px;
+  padding: 35px 25px;
+  background: var(--color-card-bg);
+  border-radius: var(--radius-md);
+  animation: slideDown 0.6s ease-out;
+  box-shadow: var(--shadow-md);
+}
+
+.yes-message {
+  font-size: var(--text-xl);
+  color: var(--color-accent);
+  font-family: var(--font-cursive);
+  font-weight: 700;
+  margin: 0;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+.no-message {
+  font-size: var(--text-lg);
+  color: var(--color-text);
+  font-family: var(--font-cursive);
+  font-weight: 500;
+  margin: 0;
+}
+
+.sub-message {
+  font-size: var(--text-sm);
+  color: var(--color-text-light);
+  margin-top: 16px;
+  font-family: var(--font-body);
+  font-weight: 500;
+}
+
+/* ============================================
+   MOBILE RESPONSIVE
+   ============================================ */
+
+/* Small phones */
+@media (max-width: 375px) {
+  .bible-quote-section {
+    padding: 40px 12px;
+    min-height: auto;
+  }
+
+  .verse {
+    padding: 22px 16px;
+    margin-bottom: 30px;
+    border-left-width: 4px;
+  }
+
+  .verse-text {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+  }
+
+  .verse-reference {
+    font-size: 0.85rem;
+  }
+
+  .dedication {
+    margin: 30px 0;
+  }
+
+  .dedication p {
+    font-size: 1.4rem;
+  }
+
+  .achievement {
+    font-size: 0.85rem !important;
+    letter-spacing: 1.5px;
+  }
+
+  .question-section {
+    margin-top: 35px;
+  }
+
+  .big-question {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+  }
+
+  .button-group {
+    gap: 14px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .yes-button-final,
+  .no-button-final {
+    padding: 14px 40px;
+    font-size: 0.95rem;
+    width: 80%;
+    max-width: 220px;
+  }
+
+  .response {
+    padding: 25px 18px;
+    margin-top: 30px;
+  }
+
+  .yes-message {
+    font-size: var(--text-lg);
+  }
+
+  .no-message {
+    font-size: var(--text-base);
+  }
+
+  .sub-message {
+    font-size: 0.85rem;
+  }
+}
+
+/* Standard phones */
+@media (min-width: 376px) and (max-width: 480px) {
+  .bible-quote-section {
+    padding: 45px 14px;
+  }
+
+  .verse {
+    padding: 25px 20px;
+  }
+
+  .verse-text {
+    font-size: 1rem;
+  }
+
+  .dedication p {
+    font-size: 1.5rem;
+  }
+
+  .big-question {
+    font-size: 1.7rem;
+  }
+
+  .button-group {
+    gap: 16px;
+  }
+
+  .yes-button-final,
+  .no-button-final {
+    padding: 14px 38px;
+    font-size: 1rem;
+  }
+}
+
+/* Large phones / Small tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+  .bible-quote-section {
+    padding: 50px 20px;
+  }
+
+  .verse {
+    padding: 30px 25px;
+  }
+}
+
+/* Landscape phones */
+@media (max-height: 500px) and (orientation: landscape) {
+  .bible-quote-section {
+    min-height: auto;
+    padding: 30px 20px;
+  }
+
+  .verse {
+    padding: 20px;
+    margin-bottom: 25px;
+  }
+
+  .verse-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .dedication {
+    margin: 20px 0;
+  }
+
+  .dedication p {
+    font-size: 1.3rem;
+    margin: 6px 0;
+  }
+
+  .question-section {
+    margin-top: 25px;
+  }
+
+  .big-question {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+
+  .yes-button-final,
+  .no-button-final {
+    padding: 10px 30px;
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,298 @@
+.days-together {
+  background: var(--color-card-bg);
+  border-radius: var(--radius-md);
+  padding: 24px 20px;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--color-border);
+  margin: 20px auto 0;
+  max-width: 380px;
+  width: 100%;
+  transition: all var(--transition-theme);
+}
+
+.days-together-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.days-together-header h3 {
+  font-family: var(--font-cursive);
+  font-size: var(--text-base);
+  color: var(--color-text);
+  margin: 0;
+  transition: color var(--transition-theme);
+}
+
+.heart-icon {
+  font-size: 1rem;
+  animation: heartFloat 2s ease-in-out infinite;
+}
+
+.heart-icon:last-child {
+  animation-delay: 0.5s;
+}
+
+@keyframes heartFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-3px) scale(1.1);
+  }
+}
+
+/* Main Days Display */
+.days-main {
+  margin: 14px 0;
+}
+
+.days-number {
+  font-family: var(--font-cursive);
+  font-size: clamp(2.2rem, 10vw, 3rem);
+  font-weight: 700;
+  color: var(--color-accent);
+  line-height: 1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  animation: numberPulse 3s ease-in-out infinite;
+  transition: color var(--transition-theme);
+}
+
+@keyframes numberPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+.days-label {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-light);
+  margin-top: 4px;
+  font-weight: 500;
+  transition: color var(--transition-theme);
+}
+
+/* Breakdown */
+.days-breakdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 14px 0;
+  padding: 10px;
+  background: var(--color-background);
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-theme);
+}
+
+.time-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.time-value {
+  font-family: var(--font-ui);
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-primary);
+  transition: color var(--transition-theme);
+}
+
+.time-label {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  color: var(--color-text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color var(--transition-theme);
+}
+
+.time-separator {
+  color: var(--color-border);
+  font-size: var(--text-sm);
+  transition: color var(--transition-theme);
+}
+
+/* Live Counter */
+.live-counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  margin: 12px 0;
+  padding: 8px 14px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  border-radius: var(--radius-lg);
+  color: white;
+}
+
+.counter-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 36px;
+}
+
+.counter-value {
+  font-family: var(--font-ui);
+  font-size: var(--text-base);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.counter-label {
+  font-family: var(--font-body);
+  font-size: 0.55rem;
+  text-transform: uppercase;
+  opacity: 0.9;
+  letter-spacing: 0.5px;
+}
+
+.counter-colon {
+  font-size: var(--text-base);
+  font-weight: bold;
+  animation: colonBlink 1s step-end infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes colonBlink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+/* Since Date */
+.since-date {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  color: var(--color-text-light);
+  margin-top: 12px;
+  font-weight: 500;
+  transition: color var(--transition-theme);
+}
+
+/* ============================================
+   MOBILE RESPONSIVE
+   ============================================ */
+
+/* Small phones */
+@media (max-width: 375px) {
+  .days-together {
+    padding: 18px 14px;
+    margin: 15px 10px 0;
+    max-width: 100%;
+  }
+
+  .days-together-header h3 {
+    font-size: var(--text-sm);
+  }
+
+  .heart-icon {
+    font-size: 0.9rem;
+  }
+
+  .days-number {
+    font-size: 2rem;
+  }
+
+  .days-label {
+    font-size: var(--text-xs);
+  }
+
+  .days-breakdown {
+    gap: 6px;
+    padding: 8px;
+  }
+
+  .time-value {
+    font-size: var(--text-sm);
+  }
+
+  .time-label {
+    font-size: 0.6rem;
+  }
+
+  .live-counter {
+    padding: 6px 10px;
+  }
+
+  .counter-unit {
+    min-width: 30px;
+  }
+
+  .counter-value {
+    font-size: var(--text-sm);
+  }
+
+  .counter-label {
+    font-size: 0.5rem;
+  }
+
+  .counter-colon {
+    font-size: var(--text-sm);
+    margin-bottom: 8px;
+  }
+
+  .since-date {
+    font-size: 0.75rem;
+    margin-top: 10px;
+  }
+}
+
+/* Standard phones */
+@media (min-width: 376px) and (max-width: 480px) {
+  .days-together {
+    padding: 20px 16px;
+    margin: 18px 12px 0;
+  }
+
+  .days-number {
+    font-size: 2.3rem;
+  }
+}
+
+/* Landscape phones */
+@media (max-height: 500px) and (orientation: landscape) {
+  .days-together {
+    padding: 14px 16px;
+    margin: 12px auto 0;
+    max-width: 350px;
+  }
+
+  .days-together-header {
+    margin-bottom: 10px;
+  }
+
+  .days-main {
+    margin: 10px 0;
+  }
+
+  .days-number {
+    font-size: 1.8rem;
+  }
+
+  .days-breakdown {
+    margin: 10px 0;
+    padding: 8px;
+  }
+
+  .live-counter {
+    margin: 8px 0;
+    padding: 6px 12px;
+  }
+
+  .since-date {
+    margin-top: 8px;
+  }
+}

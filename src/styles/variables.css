@@ -1,0 +1,144 @@
+/* Theme 1: Scrubs Blue & Heart Red */
+:root,
+[data-theme="scrubs"] {
+  --color-background: #f2f8fc;
+  --color-primary: #5b9bd5;
+  --color-secondary: #f2b5c4;
+  --color-accent: #e63946;
+  --color-text: #1d3557;
+  --color-text-light: #457b9d;
+  --color-border: #457b9d;
+  --color-success: #2a9d8f;
+  --color-badge-bg: #e8f1f8;
+  --color-card-bg: rgba(255, 255, 255, 0.95);
+
+  --gradient-hero: linear-gradient(135deg, var(--color-background) 0%, var(--color-primary) 50%, var(--color-background) 100%);
+  --gradient-gallery: linear-gradient(180deg, var(--color-background) 0%, rgba(91, 155, 213, 0.15) 100%);
+  --gradient-quote: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-background) 100%);
+  --gradient-card: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+}
+
+/* Theme 2: Warm Coral Sunset */
+[data-theme="coral"] {
+  --color-background: #fff8f5;
+  --color-primary: #ffcdb2;
+  --color-secondary: #ffb4a2;
+  --color-accent: #e5989b;
+  --color-text: #6d4c41;
+  --color-text-light: #8d6e63;
+  --color-border: #b5838d;
+  --color-success: #81c784;
+  --color-badge-bg: #fff0eb;
+  --color-card-bg: rgba(255, 255, 255, 0.95);
+
+  --gradient-hero: linear-gradient(135deg, var(--color-background) 0%, var(--color-primary) 50%, var(--color-background) 100%);
+  --gradient-gallery: linear-gradient(180deg, var(--color-background) 0%, rgba(255, 205, 178, 0.2) 100%);
+  --gradient-quote: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-background) 100%);
+  --gradient-card: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+}
+
+/* Theme 3: Green Tea Latte */
+[data-theme="greentea"] {
+  --color-background: #f5f9f5;
+  --color-primary: #a8d5a2;
+  --color-secondary: #d4e6c3;
+  --color-accent: #6b9b5e;
+  --color-text: #3d5a3d;
+  --color-text-light: #5a7a5a;
+  --color-border: #7cb07a;
+  --color-success: #4caf50;
+  --color-badge-bg: #e8f5e9;
+  --color-card-bg: rgba(255, 255, 255, 0.95);
+
+  --gradient-hero: linear-gradient(135deg, var(--color-background) 0%, var(--color-primary) 50%, var(--color-background) 100%);
+  --gradient-gallery: linear-gradient(180deg, var(--color-background) 0%, rgba(168, 213, 162, 0.2) 100%);
+  --gradient-quote: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-background) 100%);
+  --gradient-card: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+}
+
+/* Theme 4: Tiramisu */
+[data-theme="tiramisu"] {
+  --color-background: #faf6f2;
+  --color-primary: #d4a574;
+  --color-secondary: #e8d4c4;
+  --color-accent: #8b5a3c;
+  --color-text: #4a3728;
+  --color-text-light: #6d5344;
+  --color-border: #a67c5b;
+  --color-success: #7cb342;
+  --color-badge-bg: #f5ebe0;
+  --color-card-bg: rgba(255, 255, 255, 0.95);
+
+  --gradient-hero: linear-gradient(135deg, var(--color-background) 0%, var(--color-primary) 50%, var(--color-background) 100%);
+  --gradient-gallery: linear-gradient(180deg, var(--color-background) 0%, rgba(212, 165, 116, 0.2) 100%);
+  --gradient-quote: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-background) 100%);
+  --gradient-card: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+}
+
+/* Typography - Better Valentine Fonts */
+:root {
+  /* Dancing Script - Beautiful cursive for headings */
+  --font-cursive: 'Dancing Script', cursive;
+  /* Playfair Display - Elegant serif for quotes */
+  --font-serif: 'Playfair Display', serif;
+  /* Quicksand - Clean, rounded, easy to read */
+  --font-body: 'Quicksand', sans-serif;
+  /* Poppins - Modern, clean for UI elements */
+  --font-ui: 'Poppins', sans-serif;
+
+  /* Font Sizes - Larger for better readability */
+  --text-xs: 0.875rem;    /* 14px */
+  --text-sm: 1rem;        /* 16px */
+  --text-base: 1.125rem;  /* 18px */
+  --text-lg: 1.25rem;     /* 20px */
+  --text-xl: 1.5rem;      /* 24px */
+  --text-2xl: 1.875rem;   /* 30px */
+  --text-3xl: 2.25rem;    /* 36px */
+  --text-4xl: 3rem;       /* 48px */
+  --text-5xl: 4rem;       /* 64px */
+
+  /* Spacing */
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 32px;
+  --spacing-xl: 48px;
+
+  /* Transitions - Smoother and longer for theme changes */
+  --transition-base: 0.3s ease;
+  --transition-flip: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --transition-theme: 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 15px;
+  --radius-lg: 50px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 8px 16px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Global smooth transitions for theme changes */
+* {
+  transition:
+    background-color 1.2s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 1.2s cubic-bezier(0.4, 0, 0.2, 1),
+    color 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Exception for transform/opacity animations - keep them snappy */
+button,
+a,
+.photo-card,
+.photo-card-inner,
+.scroll-indicator {
+  transition:
+    background-color 1.2s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 1.2s cubic-bezier(0.4, 0, 0.2, 1),
+    color 1.2s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.3s ease,
+    opacity 0.3s ease,
+    box-shadow 0.3s ease;
+}
